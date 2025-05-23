@@ -1,4 +1,6 @@
-FROM node:18
+# Use a lightweight Node.js image, even though we use python
+# it runs via pyodide / pyscript, so doesn't need to be in the container
+FROM node:24-slim
 
 # Install make for the build commands
 RUN apt-get update && apt-get install -y make
